@@ -1,0 +1,50 @@
+<div class="card container p-3 my-3" style="min-height: 600px;">
+    <h2 class="text-center">Mis Pizarras</h2>
+    <div class="row my-3 mx-3">
+        {{#each salas}}
+        <div class="col-md-4 ">
+            <div class="card text-center px-0 my-3">
+                <div class="d-flex justify-content-center">
+                    <img class="card-img-top text-center mt-2" src="/img/Pizarra.png" alt="Card image cap" style="width: 12rem;">
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h5 class="card-title text-uppercase mt-2 mr-2" style="color: rgb(106, 106, 106);">
+                            {{title}}
+                        </h5>
+                        <a href="/salas/inSala/{{tokenS}}" class="btn btn-primary px-2 py-1" target="_blank">
+                            <i class="fas fa-link"></i>
+                        </a>
+
+                    </div>
+                    <p class="m-1">{{description}}</p>
+                    <p class="text-muted">
+                        {{timeago created_at}}
+                    </p>
+                    <div class="d-flex justify-content-around">
+                        <a class="btn btn-primary" href="/salas/listUsuarios/{{id}}">
+                            <i class="fas fa-share-alt"></i>
+                        </a>
+                        <a class="btn btn-warning" href="/salas/edit/{{id}}">
+                            <i class="far fa-edit"></i>
+                        </a>
+
+                        <a class="btn btn-danger" href="/salas/delete/{{id}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>No hay ninguna sala para este usuario.</p>
+                <a href="/salas/add">Crea Uno!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

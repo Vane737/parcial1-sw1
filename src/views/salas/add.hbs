@@ -1,0 +1,31 @@
+<div class="container p-4 masthead">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-3">Crea una nueva Sala</h5>
+                    <form action="/salas/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                        </div>
+                        {{!-- <div class="form-group">
+                            <input type="text" name="xml" class="form-control" placeholder="XML">
+                        </div> --}}
+                        <div class="form-group">
+                            <textarea name="description" rows="2" class="form-control"
+                                placeholder="Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-dark btn-block">
+                                Guardar
+
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card container p-3 my-3" style="min-height: 600px;">
+    <h2 class="text-center">Pizarras a las que fuiste añadido</h2>
+    <div class="row my-3 mx-3">
+        {{#each salas}}
+        <div class="col-md-4 my-3">
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <h4 class="card-title"  style="color: rgb(17, 144, 89);">{{title}}</h4>
+                    <p class="card-text">{{description}}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">{{timeago created_at}}</h6>
+                    <a href="/salas/inSala/{{tokenS}}" class="btn btn-warning">Ir a la sala <i class="fas fa-sign-in-alt"></i></a>
+                    {{!-- <a href="#" class="card-link">Another link</a> --}}
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>Este usuario no tiene ninguna sala compartida</p>
+                <a href="/salas/add">Crea Uno!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

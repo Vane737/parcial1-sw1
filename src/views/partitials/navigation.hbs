@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg py-3" style="background-color: #92DEAC;">
+  <div class="container">
+    <a class="navbar-brand" href="/" style="color: #333333;">
+      <i class="far fa-window-restore"></i> Diagramador
+    </a>
+    <a class="nav-item pt-1 mr-4" style="color: #646464;" href="/salas">Mis Salas</a>
+    <a class="nav-item pt-1 mr-4" style="color: #646464;" href="/salas/salasCompartidas">Salas Compartidas</a>
+    <a class="nav-item btn btn-dark py-1" href="/salas/add">Añadir Sala <i class="fas fa-plus"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+        {{#if user}}
+
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            SALAS
+          </a> --}}
+          {{!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/salas">Mis Salas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/salas/add">Añadir Salas</a>
+            <a class="dropdown-item" href="/salas/salasCompartidas">Salas Compartidas</a>
+          </div> --}}
+        {{!-- </li> --}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{user.username}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item d-flex justify-content-between" href="/profile">Mi Perfil <i class="mt-2 fas fa-user-circle"></i></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item d-flex justify-content-between" href="/logout">Cerrar sesión <i class="mt-2 fas fa-sign-out-alt"></i></a>
+            {{!-- <a class="dropdown-item" href="/salas/salasCompartidas">Salas Compartidas</a>
+            <a class="dropdown-item" href="/salas/salasCompartidas">Salas Compartidas</a> --}}
+          </div>
+        </li>
+        {{!-- <li class="nav-item">
+          <a class="nav-link" href="/profile">{{user.username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class=" btn btn-dark px-2 py-1 m-0" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+        </li> --}}
+        {{else}}
+        <li class="nav-item">
+          <a class="btn btn-info mr-3" href="/signin">Iniciar Sesion</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning" href="/signup">Registrarme</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
