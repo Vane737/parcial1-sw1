@@ -121,7 +121,7 @@ router.get('/delete/:id', isLoggedIn, async (req, res) => {
       const { tokenS } = req.params;
       const inSala = `?room=${tokenS}`;
       const inUs = `&username=${tokenU}`;
-      const rutaDeMiProyectoPizarra = `http://44.233.226.210:8080/secuence-diagram${inSala}${inUs}`;
+      const rutaDeMiProyectoPizarra = `http://localhost:8080/secuence-diagram${inSala}${inUs}`;
       res.redirect(rutaDeMiProyectoPizarra);
     } catch (error) {
       console.error('Error al redirigir a la sala:', error);
